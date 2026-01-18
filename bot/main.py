@@ -8,6 +8,7 @@ from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
 
 from .handlers import router
+from .database import init_db
 
 load_dotenv()
 
@@ -23,6 +24,10 @@ async def main():
     token = os.getenv("TELEGRAM_BOT_TOKEN")
     if not token:
         raise ValueError("TELEGRAM_BOT_TOKEN не задан!")
+    
+    # Инициализируем базу данных
+    init_db()
+    logger.info("База данных инициализирована")
     
     bot = Bot(token=token)
     dp = Dispatcher()
