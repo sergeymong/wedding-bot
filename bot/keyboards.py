@@ -11,11 +11,11 @@ def main_menu() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="🕐 Расписание", callback_data="schedule"),
         ],
         [
-            InlineKeyboardButton(text="👗 Дресс-код", callback_data="dresscode"),
-            InlineKeyboardButton(text="🍽 Меню", callback_data="menu"),
+            InlineKeyboardButton(text="👗 Что надеть", callback_data="dresscode"),
+            InlineKeyboardButton(text="🍽 Еда и напитки", callback_data="menu"),
         ],
         [
-            InlineKeyboardButton(text="❓ FAQ", callback_data="faq"),
+            InlineKeyboardButton(text="❓ Вопросы", callback_data="questions"),
             InlineKeyboardButton(text="📞 Связаться", callback_data="contact"),
         ],
     ])
@@ -36,8 +36,8 @@ def location_keyboard() -> InlineKeyboardMarkup:
     ])
 
 
-def faq_keyboard() -> InlineKeyboardMarkup:
-    """Клавиатура для FAQ"""
+def questions_keyboard() -> InlineKeyboardMarkup:
+    """Клавиатура для вопросов"""
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="✉️ Ещё вопросы? Напиши нам", callback_data="contact")],
         [InlineKeyboardButton(text="← Назад в меню", callback_data="back")]
@@ -47,6 +47,5 @@ def faq_keyboard() -> InlineKeyboardMarkup:
 def contact_keyboard() -> InlineKeyboardMarkup:
     """Клавиатура для контактов"""
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="📱 Позвонить Сергею", url="tel:+79991621492")],
         [InlineKeyboardButton(text="← Назад в меню", callback_data="back")]
     ])
